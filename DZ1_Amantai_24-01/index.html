@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="email">
+            <label for="email"></label>
+            <input type="email" name="" id="email" placeholder="Электронный адрес">
+            <span id="emailCheck"></span>
+        </div>
+        <div class="password">
+            <label for="password"></label>
+            <input type="password" name="" id="password" placeholder="Пароль">
+            <input type="checkbox" id="checkbox">
+            <div id="passwordCheck"></div>
+        </div>
+        <div class="passwordRepeat">
+            <label for="passwordRepeat"></label>
+            <input type="password" id="passwordRepeat" placeholder="Повторите пароль">
+            <input type="checkbox" id="checkbox1">
+            <div id="passwordRepeatCheck"></div>
+        </div>
+        <span class="text">Пароль состоит из четырех или более символов, содержать заглавные и строчные буквы, цифры</span>
+        <button id="save">Сохранить</button>
+        <h3 id="saveForm"></h3>
+    </div>
+</body>
+<script src="app.js"></script>
+</html>
