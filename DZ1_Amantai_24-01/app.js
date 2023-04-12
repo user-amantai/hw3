@@ -8,7 +8,7 @@ const passwordRepeatCheck = document.querySelector('#passwordRepeatCheck')
 const save = document.querySelector('#save')
 const saveForm = document.querySelector('#saveForm')
 const emailRegExp = /@/
-const passwordRegExp = /^(?=.*\d)(?=.*[A-Z]){8,20}/i
+const passwordRegExp = /^(?=.*\d)(?=.*[A-ZА-Я])/
 
 emailInput.addEventListener('input', () => {
     if (emailRegExp.test(emailInput.value) === true){
