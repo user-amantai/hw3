@@ -1,3 +1,6 @@
+const object = document.querySelector('#object')
+const square = document.querySelector('#square')
+
 const emailInput = document.querySelector('#email')
 const emailCheck = document.querySelector('#emailCheck')
 const passwordInput = document.querySelector('#password')
@@ -8,7 +11,7 @@ const passwordRepeatCheck = document.querySelector('#passwordRepeatCheck')
 const save = document.querySelector('#save')
 const saveForm = document.querySelector('#saveForm')
 const emailRegExp = /@/
-const passwordRegExp = /^(?=.*\d)(?=.*[A-ZА-Я])/
+const passwordRegExp = /^(?=.*\d)(?=.*[A-Za-z])/
 
 emailInput.addEventListener('input', () => {
     if (emailRegExp.test(emailInput.value) === true){
@@ -56,7 +59,7 @@ checkbox1.onclick = (view)
 save.onclick = () => {
     if(emailCheck.style.color === 'greenyellow' && passwordCheck.style.color === 'greenyellow' && passwordRepeatCheck.style.color === 'greenyellow'){
         saveForm.innerHTML = 'Ваши данные сохранились'
-        saveForm.style.color = 'greenyellow'
+        saveForm.style.color = 'green'
     } else {
         saveForm.innerHTML = 'Вы ввели не корректно!'
         saveForm.style.color = 'red'
