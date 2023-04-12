@@ -58,7 +58,7 @@ save.onclick = () => {
         saveForm.innerHTML = 'Ваши данные сохранились'
         saveForm.style.color = 'greenyellow'
     } else {
-        saveForm.innerHTML = 'Введите корректные данные!'
+        saveForm.innerHTML = 'Вы ввели не корректно!'
         saveForm.style.color = 'red'
     }
 }
