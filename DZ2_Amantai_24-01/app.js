@@ -4,7 +4,7 @@ const text = document.querySelector('#text')
 let timer = 0
 setInterval(() => {
     timer++
-    if (timer <= 300) {b
+    if (timer <= 300) {
         let minutes = Math.floor(timer / 60)
         let seconds = timer % 60
         time.innerHTML = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`
