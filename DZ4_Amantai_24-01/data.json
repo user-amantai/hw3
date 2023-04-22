@@ -1,0 +1,62 @@
+[
+    {
+        "image": "images/1.jpg",
+        "title": "MOZGOLOM",
+        "price": "2 737 ₽",
+        "description": "Портативная игровая приставка"
+    },
+    {
+        "image": "images/2.jpg",
+        "title": "PRO",
+        "price": "750 ₽",
+        "description": "Беспроводные наушники Pro"
+    },
+    {
+        "image": "images/3.jpg",
+        "title": "Xiaomi",
+        "price": "700 ₽",
+        "description": "Беспроводные наушники вакуумные"
+    },
+    {
+        "image": "images/4.jpg",
+        "title": "Dsaila A2",
+        "price": "902 ₽",
+        "description": "Беспроводные наушники Dsaila A2"
+    },
+    {
+        "image": "images/5.jpg",
+        "title": "Jama Inc",
+        "price": "854 ₽",
+        "description": "Беспроводные наушники Pro"
+    },
+    {
+        "image": "images/6.jpg",
+        "title": "Игровые наушники K55",
+        "price": "890 ₽",
+        "description": "Игровые наушники K55"
+    },
+    {
+        "image": "images/7.jpg",
+        "title": "Me TradeMark",
+        "price": "2580 ₽",
+        "description": "Лучшая реплика AirPods 3"
+    },
+    {
+        "image": "images/8.jpg",
+        "title": "TWS М90PRO",
+        "price": "620 ₽",
+        "description": "Игровые блютуз наушники"
+    },
+    {
+        "image": "images/9.jpg",
+        "title": "Cosmic Bass",
+        "price": "598 ₽",
+        "description": "Беспроводные наушники блютуз F9"
+    },
+    {
+        "image": "images/10.jpg",
+        "title": "Xiaomi",
+        "price": "1327 ₽",
+        "description": "Наушники беспроводные с микрофоном блютуз"
+    }
+]
