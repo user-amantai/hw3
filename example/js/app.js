@@ -107,3 +107,45 @@ let stopInterval = addEventListener('click', () => {
             intervalChange = setInterval(changeNext, 1000)
         }, 5000);
     })
+
+const forms = document.querySelectorAll('form')
+
+const postData = (form) => {
+    form.addEventListener("submit" , e => {
+        e.preventDefault()
+
+    const request = new XMLHttpRequest()
+    request.open("POST", "server.php")
+    request.setRequestHeader("Content-Type", "application/json")
+
+    const formData = new FormData(form)
+    const obj = {}
+    formData.forEach((value, name) => {
+        obj[name] = value
+    })
+    const json = JSON.stringify(obj)
+    request.send(json)
+    request.addEventListener("load", () => {
+        if (request.status === 200) {
+            const status200 = document.createElement("div");
+            status200.innerHTML = "Все хорошо!";
+            status200.classList.add("status")
+            modal.appendChild(status200)
+            setTimeout(() => {
+                modal.removeChild(status200);
+            }, 1500);
+        } else {
+            const status400 = document.createElement("div");
+            status400.innerHTML = "ОШИБКА"
+            status400.classList.add("status")
+            modal.appendChild(status400)
+            setTimeout(() => {
+                modal.removeChild(status400);
+            }, 1500);
+        }
+    })
+    })
+}
+forms.forEach((item)=>{
+    postData(item)
+})
