@@ -109,43 +109,76 @@ let stopInterval = addEventListener('click', () => {
     })
 
 const forms = document.querySelectorAll('form')
+const modalStatus200 = () => {
+    const status200 = document.createElement("div");
+        status200.innerHTML = "Все хорошо!";
+        status200.classList.add("status")
+        modal.appendChild(status200)
+        setTimeout(() => {
+            modal.removeChild(status200);
+        }, 1500);
+}
+const modalStatus404 = () => {
+    const status400 = document.createElement("div");
+        status400.innerHTML = "ОШИБКА"
+        status400.classList.add("status")
+        modal.appendChild(status400)
+        setTimeout(() => {
+            modal.removeChild(status400);
+        }, 1500);
+}
 
-const postData = (form) => {
+const postData = (http, data) => {
+    // form.addEventListener("submit" , e => {
+    //     e.preventDefault()
+
+    // const request = new XMLHttpRequest()
+    // request.open("POST", "server.php")
+    // request.setRequestHeader("Content-Type", "application/json")
+    const request = fetch(http,{
+        method: "POST",
+        headers: {"Content-Type" : "application/json"},
+        body: data
+    }) 
+    return request
+}
+
+const postData2 = (form) => {
     form.addEventListener("submit" , e => {
         e.preventDefault()
+        const formData = new FormData(form)
+        const obj = {}
+        formData.forEach((value, name) => {
+            obj[name] = value
+        })
+        const json = JSON.stringify(obj)
+        // request.send(json)
 
-    const request = new XMLHttpRequest()
-    request.open("POST", "server.php")
-    request.setRequestHeader("Content-Type", "application/json")
-
-    const formData = new FormData(form)
-    const obj = {}
-    formData.forEach((value, name) => {
-        obj[name] = value
-    })
-    const json = JSON.stringify(obj)
-    request.send(json)
-    request.addEventListener("load", () => {
-        if (request.status === 200) {
-            const status200 = document.createElement("div");
-            status200.innerHTML = "Все хорошо!";
-            status200.classList.add("status")
-            modal.appendChild(status200)
-            setTimeout(() => {
-                modal.removeChild(status200);
-            }, 1500);
-        } else {
-            const status400 = document.createElement("div");
-            status400.innerHTML = "ОШИБКА"
-            status400.classList.add("status")
-            modal.appendChild(status400)
-            setTimeout(() => {
-                modal.removeChild(status400);
-            }, 1500);
-        }
-    })
+        postData("server.php", json)
+            .then((response) => response.status)
+            .then((data) => data === 200 ? modalStatus200() : modalStatus404())
+            .catch(e => console.error(e))
+        // request.addEventListener("load", () => {
+        //     if (request.status === 200) {
+        //         const status200 = document.createElement("div");
+        //         status200.innerHTML = "Все хорошо!";
+        //         status200.classList.add("status")
+        //         modal.appendChild(status200)
+        //         setTimeout(() => {
+        //             modal.removeChild(status200);
+        //         }, 1500);
+        //     } else {
+        //         const status400 = document.createElement("div");
+        //         status400.innerHTML = "ОШИБКА"
+        //         status400.classList.add("status")
+        //         modal.appendChild(status400)
+        //         setTimeout(() => {
+        //             modal.removeChild(status400);
+        //         }, 1500);
+        //     }
+        // })
     })
 }
-forms.forEach((item)=>{
-    postData(item)
+forms.forEach((item) => {
+    postData2(item)
 })
