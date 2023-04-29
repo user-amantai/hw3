@@ -128,22 +128,22 @@ const modalStatus404 = () => {
         }, 1500);
 }
 
-const postData = (http, data) => {
+const postData = (url, data) => {
     // form.addEventListener("submit" , e => {
     //     e.preventDefault()
 
     // const request = new XMLHttpRequest()
     // request.open("POST", "server.php")
     // request.setRequestHeader("Content-Type", "application/json")
-    const request = fetch(http,{
+    const request = fetch(url, {
         method: "POST",
-        headers: {"Content-Type" : "application/json"},
+        headers: { "Content-Type" : "application/json" },
         body: data
     }) 
     return request
 }
 
-const postData2 = (form) => {
+const bindPostData = (form) => {
     form.addEventListener("submit" , e => {
         e.preventDefault()
         const formData = new FormData(form)
@@ -180,5 +180,5 @@ const postData2 = (form) => {
     })
 }
 forms.forEach((item) => {
-    postData2(item)
+    bindPostData(item)
 })
